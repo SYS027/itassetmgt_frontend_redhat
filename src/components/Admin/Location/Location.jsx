@@ -25,7 +25,7 @@ const Location = ({ sidebarOpen }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/locations");
+        const response = await fetch("http://3.109.98.188:3000/api/v1/locations");
         const data = await response.json();
         setData(data);
       } catch (error) {}
@@ -36,7 +36,7 @@ const Location = ({ sidebarOpen }) => {
   const handleDelete = async (itemId) => {
     try {
       const response = await fetch(
-        `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/locations/${itemId}`,
+        `http://3.109.98.188:3000/api/v1/locations/${itemId}`,
         {
           method: "DELETE",
         }
@@ -52,7 +52,7 @@ const Location = ({ sidebarOpen }) => {
 
   useEffect(() => {
     if (data.state_id) {
-      const stateUrl = `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/states/${data.state_id}`;
+      const stateUrl = `http://3.109.98.188:3000/api/v1/states/${data.state_id}`;
       fetch(stateUrl)
         .then((response) => {
           if (response.ok) {
@@ -67,7 +67,7 @@ const Location = ({ sidebarOpen }) => {
 
   useEffect(() => {
     if (data.city_id) {
-      const cityUrl = `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/cities/${data.city_id}`;
+      const cityUrl = `http://3.109.98.188:3000/api/v1/cities/${data.city_id}`;
       fetch(cityUrl)
         .then((response) => {
           if (response.ok) {
@@ -95,7 +95,7 @@ const Location = ({ sidebarOpen }) => {
   const updateStatus = async (id, newStatus) => {
     try {
       const response = await fetch(
-        `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/locations/${id}`,
+        `http://3.109.98.188:3000/api/v1/locations/${id}`,
         {
           method: "PUT",
           headers: {

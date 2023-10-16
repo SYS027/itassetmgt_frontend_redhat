@@ -19,7 +19,7 @@ const AssignListShow = ({ sidebarOpen, match }) => {
   
 
   useEffect(() => {
-    const url = `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/assign_assets/${params.id}`;
+    const url = `hhttp://3.109.98.188:3000/api/v1/assign_assets/${params.id}`;
     fetch(url)
       .then((response) => {
         if (response.ok) {

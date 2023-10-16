@@ -14,7 +14,7 @@ const CitySelect = ({ selectedCountryId, selectedStateId, onSelectCity }) => {
           return;
         }
 
-        const response = await fetch(`https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/cities?country_id=${selectedCountryId}&state_id=${selectedStateId}`);
+        const response = await fetch(`http://3.109.98.188:3000/api/v1/cities?country_id=${selectedCountryId}&state_id=${selectedStateId}`);
         const data = await response.json();
         setCities(data);
       } catch (error) {

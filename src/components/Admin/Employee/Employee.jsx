@@ -11,7 +11,7 @@ const Employee = ({ sidebarOpen }) => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/employee"); 
+      const response = await fetch("http://3.109.98.188:3000/api/v1/employee"); 
       if (!response.ok) {
         throw new Error("Network response was not ok.");
       }
@@ -38,7 +38,7 @@ const Employee = ({ sidebarOpen }) => {
   const updateStatus = async (id, newStatus) => {
     try {
       const response = await fetch(
-        `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/employee/${id}`,
+        `hhttp://3.109.98.188:3000/api/v1/employee/${id}`,
         {
           method: "PUT",
           headers: {

@@ -21,7 +21,7 @@ const ProfileSection = ({ sidebarOpen }) => {
     }
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/profiles", {
+        const response = await axios.get("http://3.109.98.188:3000/api/v1/profiles", {
           headers: {
             Authorization: authToken,
           },

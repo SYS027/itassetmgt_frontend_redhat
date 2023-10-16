@@ -62,7 +62,7 @@ const ForgetPassword = () => {
     };
 
     axios
-      .post("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/password_resets", data)
+      .post("http://3.109.98.188:3000/api/v1/password_resets", data)
       .then((response) => {
         setResetMessage("Password reset successful!");
         navigate("/login");

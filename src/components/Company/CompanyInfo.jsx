@@ -25,7 +25,7 @@ const CompanyInfo = () => {
   const [selectedState, setSelectedState] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
 
-  const url = "https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/companies";
+  const url = "http://3.109.98.188:3000/api/v1/companies";
 
   const handleCountrySelect = (countryId) => {
     setSelectedCountryId(countryId);

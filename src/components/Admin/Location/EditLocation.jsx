@@ -24,7 +24,7 @@ const EditLocation = ({ sidebarOpen }) => {
 
   const CountryData = async () => {
     try {
-      const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/countries");
+      const response = await fetch("http://3.109.98.188:3000/api/v1/countries");
       const data = await response.json();
       setCountries(data);
     } catch (error) {
@@ -33,7 +33,7 @@ const EditLocation = ({ sidebarOpen }) => {
   };
   const StateData = async () => {
     try {
-      const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/states");
+      const response = await fetch("http://3.109.98.188:3000/api/v1/states");
       const data = await response.json();
       setStates(data);
     } catch (error) {
@@ -42,7 +42,7 @@ const EditLocation = ({ sidebarOpen }) => {
   };
   const CityData = async () => {
     try {
-      const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/cities");
+      const response = await fetch("http://3.109.98.188:3000/api/v1/cities");
       const data = await response.json();
       setCities(data);
     } catch (error) {
@@ -71,7 +71,7 @@ const EditLocation = ({ sidebarOpen }) => {
     };
     try {
       const response = await fetch(
-        `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/locations/${id}`,
+        `http://3.109.98.188:3000/api/v1/locations/${id}`,
         {
           method: "PUT",
           headers: {

@@ -23,10 +23,10 @@ const Dashboard = ({ sidebarOpen }) => {
   };
 
   useEffect(() => {
-    fetchData("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/total_vendors", setTotalVendors);
-    fetchData("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/total_employees", setTotalEmployee);
-    fetchData("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/total_assets", setTotalAsset);
-    fetchData("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/totalcost_assets",setTotalCostAsset);
+    fetchData("http://3.109.98.188:3000/api/v1/total_vendors", setTotalVendors);
+    fetchData("http://3.109.98.188:3000/api/v1/total_employees", setTotalEmployee);
+    fetchData("http://3.109.98.188:3000/api/v1/total_assets", setTotalAsset);
+    fetchData("http://3.109.98.188:3000/api/v1/totalcost_assets",setTotalCostAsset);
   }, []);
 
   return (

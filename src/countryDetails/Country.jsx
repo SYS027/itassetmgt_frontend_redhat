@@ -7,7 +7,7 @@ const CountrySelect = ({ onSelectCountry }) => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/countries");
+        const response = await fetch("http://3.109.98.188:3000/api/v1/countries");
         const data = await response.json();
         console.log(data); // Add this line to check data in console
         setCountries(data);

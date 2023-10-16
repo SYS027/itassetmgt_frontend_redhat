@@ -21,7 +21,7 @@ const AddLocation = ({ sidebarOpen }) => {
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isValidPhone, setIsValidPhone] = useState(true);
 
-  const url = "https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/locations";
+  const url = "http://3.109.98.188:3000/api/v1/locations";
 
   useEffect(() => {
     const areFieldsFilled =

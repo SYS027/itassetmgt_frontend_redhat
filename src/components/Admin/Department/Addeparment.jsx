@@ -44,7 +44,7 @@ const Addeparment = ({ sidebarOpen }) => {
         })
         return;
       }
-      const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/departments", {
+      const response = await fetch("http://3.109.98.188:3000/api/v1/departments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

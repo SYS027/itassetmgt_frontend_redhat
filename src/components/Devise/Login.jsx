@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     axios
-      .post("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/sessions", { admin: { email, password } })
+      .post("http://3.109.98.188:3000/api/v1/sessions", { admin: { email, password } })
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem("authToken", response.data.auth_token);

@@ -29,7 +29,7 @@ const AddEmployee = ({ sidebarOpen }) => {
 
     const fetchLocation = async () => {
         try {
-            const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/locations");
+            const response = await fetch("http://3.109.98.188:3000/api/v1/locations");
             const data = await response.json();
             setLocations(data);
         } catch (error) {
@@ -39,7 +39,7 @@ const AddEmployee = ({ sidebarOpen }) => {
 
     const fetchDeparment = async () => {
         try {
-            const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/departments");
+            const response = await fetch("http://3.109.98.188:3000/api/v1/departments");
             if (!response.ok) {
                 throw new Error("Network response was not ok.");
             }
@@ -52,7 +52,7 @@ const AddEmployee = ({ sidebarOpen }) => {
 
     const fetchEmployee = async () => {
         try {
-            const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/employee");
+            const response = await fetch("http://3.109.98.188:3000/api/v1/employee");
             if (!response.ok) {
                 throw new Error("Network response was not ok.");
             }
@@ -88,7 +88,7 @@ const AddEmployee = ({ sidebarOpen }) => {
                 return;
             }
 
-            const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/employees", {
+            const response = await fetch("http://3.109.98.188:3000/api/v1/employees", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

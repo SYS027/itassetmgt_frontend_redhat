@@ -17,7 +17,7 @@ const LocationDataFetch = ({
     const fetchLocationData = async () => {
       try {
         const response = await fetch(
-          `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/locations/${params.id}`
+          `http://3.109.98.188:3000/api/v1/locations/${params.id}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok.");

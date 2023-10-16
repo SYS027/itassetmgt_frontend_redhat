@@ -30,15 +30,15 @@ const Edit_Form = () => {
   };
 
   useEffect(() => {
-    fetchData("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/countries", setCountries);
-    fetchData("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/states", setStates);
-    fetchData("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/cities", setCities);
-    fetchData(`https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/vendors/${params.id}`, setVendorData);
+    fetchData("http://3.109.98.188:3000/api/v1/countries", setCountries);
+    fetchData("http://3.109.98.188:3000/api/v1/states", setStates);
+    fetchData("http://3.109.98.188:3000/api/v1/cities", setCities);
+    fetchData(`http://3.109.98.188:3000/api/v1/vendors/${params.id}`, setVendorData);
   }, [params.id]);
 
   const fetchVendors = async () => {
     try {
-      const response = await fetch("https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/vendors");
+      const response = await fetch("http://3.109.98.188:3000/api/v1/vendors");
       const data = await response.json();
       setVendors(data);
     } catch (error) {
@@ -49,7 +49,7 @@ const Edit_Form = () => {
   useEffect(() => {
     const fetchVendorData = async () => {
       try {
-        const response = await fetch(`https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/vendors/${params.id}`);
+        const response = await fetch(`http://3.109.98.188:3000/api/v1/vendors/${params.id}`);
         if (!response.ok) {
           throw new Error("Network response was not ok.");
         }
@@ -76,7 +76,7 @@ const Edit_Form = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/vendors/${params.id}`, {
+      const response = await fetch(`http://3.109.98.188:3000/api/v1/vendors/${params.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
