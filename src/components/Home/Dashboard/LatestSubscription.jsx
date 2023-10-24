@@ -1,18 +1,20 @@
-import React from 'react'
+import React from "react";
 
 const LatestSubscription = () => {
   return (
     <>
-    <div className="row mt-5">
-        <h4 className="col-md-6">Latest Subscriptions</h4>
-        <div className="col-md-6">
-          <button
-            href="#"
-            className="btn btn-primary btnn"
-            id="new_subscription_main"
-          >
-            New Subscription +
-          </button>
+      <div className="container">
+        <div className="row mt-5">
+          <h4 className="col-md-6">Latest Subscriptions</h4>
+          <div className="col-md-6">
+            <button
+              href="#"
+              className="btn btn-primary btnn"
+              id="new_subscription_main"
+            >
+              New Subscription +
+            </button>
+          </div>
         </div>
       </div>
 
@@ -63,7 +65,7 @@ const LatestSubscription = () => {
               <td>After 02 weeks</td>
               <td>$700</td>
               <td>Jan 20 ,2020</td>
-              <td>Creadit Card</td>
+              <td>Credit Card</td>
             </tr>
 
             <tr role="row" className="odd">
@@ -72,13 +74,13 @@ const LatestSubscription = () => {
               <td>After 01 year</td>
               <td>$700</td>
               <td>Jan 20 ,2020</td>
-              <td>Creadit Card</td>
+              <td>Credit Card</td>
             </tr>
           </tbody>
         </table>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default LatestSubscription;

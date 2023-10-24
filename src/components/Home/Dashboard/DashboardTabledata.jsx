@@ -13,15 +13,17 @@ const DashboardTabledata = () => {
         </button>
       </div>
 
-      <div className="row mt-5">
-        <div className="col-md-6">
-          <h4>Latest Assets Purchase</h4>
-        </div>
+      <div className="container">
+        <div className="row mt-5">
+          <div className="col-md-6">
+            <h4>Latest Assets Purchase</h4>
+          </div>
 
-        <div className="col-md-6">
-          <button href="#" className="btn btn-primary btnn " id="new_puechse">
-            New Purchase +
-          </button>
+          <div className="col-md-6">
+            <button href="/home/assetadd" className="btn btn-primary btnn " id="new_puechse">
+              New Purchase +
+            </button>
+          </div>
         </div>
       </div>
 
@@ -72,7 +74,7 @@ const DashboardTabledata = () => {
               <td>Mobile phones</td>
               <td>$700</td>
               <td>Jan 20 ,2020</td>
-              <td>Creadit Card</td>
+              <td>Credit Card</td>
             </tr>
 
             <tr className="odd">
@@ -81,14 +83,14 @@ const DashboardTabledata = () => {
               <td>Mobile phones</td>
               <td>$700</td>
               <td>Jan 20 ,2020</td>
-              <td>Creadit Card</td>
+              <td>Credit Card</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div>  
-         <LatestSubscription />
+      <div>
+        <LatestSubscription />
       </div>
     </>
   );

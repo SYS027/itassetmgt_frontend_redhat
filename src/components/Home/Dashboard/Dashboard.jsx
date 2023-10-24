@@ -89,7 +89,7 @@ const Dashboard = ({ sidebarOpen }) => {
                     <center>
                       <h4 className="card-title text-light">{totalVendors}</h4>
                     </center>
-                    <img src={div3} alt="" className="divimgdashboard" />
+                    <img src={div3} alt="" className="div3imgdashboard" />
                   </div>
                 </div>
               </div>
