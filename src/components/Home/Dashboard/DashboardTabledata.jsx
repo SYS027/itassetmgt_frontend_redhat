@@ -4,15 +4,20 @@ import LatestSubscription from "./LatestSubscription";
 const DashboardTabledata = () => {
   return (
     <>
-      <div className="button-asset-dashboard">
-        <button href="#" className="btn btn-primary btnn " id="assets">
-          UNASSIGN ASSETS
-        </button>
-        <button href="#" className="btn btn-dark btnn" id="assets-asign-button">
-          ASSIGN ASSETS
-        </button>
+      <div className="container">
+        <div className="button-asset-dashboard">
+          <button href="#" className="btn btn-primary btnn " id="assets">
+            UNASSIGN ASSETS
+          </button>
+          <button
+            href="#"
+            className="btn btn-dark btnn"
+            id="assets-asign-button"
+          >
+            ASSIGN ASSETS
+          </button>
+        </div>
       </div>
-
       <div className="container">
         <div className="row mt-5">
           <div className="col-md-6">
@@ -20,7 +25,11 @@ const DashboardTabledata = () => {
           </div>
 
           <div className="col-md-6">
-            <button href="/home/assetadd" className="btn btn-primary btnn " id="new_puechse">
+            <button
+              href="/home/assetadd"
+              className="btn btn-primary btnn "
+              id="new_puechse"
+            >
               New Purchase +
             </button>
           </div>
