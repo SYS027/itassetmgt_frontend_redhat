@@ -32,7 +32,7 @@ const EditDepartment = ({ sidebarOpen }) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://itassetmgt-7659d44ac774.herokuapp.com/api/v1/departments/${departmentId}`,
+        `http://3.109.98.188:3000/api/v1/departments/${departmentId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ const EditDepartment = ({ sidebarOpen }) => {
       }
     } catch (error) {
       console.error("Error updating data:", error);
-    }
+    }   
   };
   const handleChange = e => {
     const { name, value } = e.target;

@@ -11,8 +11,8 @@ const Pagination = () => {
           role="status"
           aria-live="polite"
         >
-          {" "}
-          1-10 of 14 entries{" "}
+          {""}
+          1-10 of entries {""}
         </div>
       </div>
       <div className="col-sm-12 col-md-7 ">
