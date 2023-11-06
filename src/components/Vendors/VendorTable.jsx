@@ -60,7 +60,7 @@ const VendorTable = ({
                   className="form-check-input"
                   type="checkbox"
                   checked={vendor.is_active}
-                  id={`toggleSwitch-${vendor.id}`}
+                  id={`flexSwitchCheckChecked-${vendor.id}`}
                   onChange={() => handleToggle(vendor.id, !vendor.is_active)}
                 />
               </div>

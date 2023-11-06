@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import "./App.css";
 import Addeparment from "./components/Admin/Department/Addeparment";
 import Department from "./components/Admin/Department/Deparment";
@@ -33,6 +33,13 @@ import AssignAsset from "./components/Home/Assets/AssignAsset";
 import AssignAssetEdit from "./components/Home/Assets/AssignAssetEdit";
 import AssignAssetList from "./components/Home/Assets/AssignAssetList";
 import AssignListShow from "./components/Home/Assets/AssignListShow";
+
+const isAuthenticated = () => {
+  // Implement your authentication logic here.
+  // Return true if the user is authenticated, else return false.
+  return localStorage.getItem("authToken") !== null; // Example check based on your storage
+};
+
 function Layout({ children }) {
   return (
     <>
@@ -41,6 +48,15 @@ function Layout({ children }) {
     </>
   );
 }
+
+function PrivateRoute({ element, path }) {
+  if (isAuthenticated()) {
+    return <Layout>{element}</Layout>;
+  } else {
+    return <Navigate to="/login" replace />;
+  }
+}
+
 
 function App() {
   

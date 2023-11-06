@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import DashboardTabledata from "./DashboardTabledata";
 import axios from "axios";
-import Graph from "../Graph/Graph";
+import Graph from "../Graph/Graph"; // Assuming a separate component for the Chart
 import "./Dashboard.css";
 import div1 from "../../Assets/div1.png";
 import div2 from "../../Assets/div2.png";
@@ -13,9 +13,11 @@ const Dashboard = ({ sidebarOpen }) => {
   const [totalEmployee, setTotalEmployee] = useState(0);
   const [totalAsset, setTotalAsset] = useState(0);
   const [totalCostAsset, setTotalCostAsset] = useState(0);
+  const [graphData, setGraphData] = useState([]);
 
   const fetchData = async (url, setDataFunction) => {
-    try {const response = await axios.get(url);
+    try {
+      const response = await axios.get(url);
       setDataFunction(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -23,22 +25,53 @@ const Dashboard = ({ sidebarOpen }) => {
   };
 
   useEffect(() => {
-    fetchData("http://3.109.98.188:3000/api/v1/total_vendors", setTotalVendors);
-    fetchData("http://3.109.98.188:3000/api/v1/total_employees", setTotalEmployee);
-    fetchData("http://3.109.98.188:3000/api/v1/total_assets", setTotalAsset);
-    fetchData("http://3.109.98.188:3000/api/v1/totalcost_assets",setTotalCostAsset);
+    const fetchDataForGraph = async () => {
+      try {
+        const vendorsResponse = await axios.get("http://3.109.98.188:3000/api/v1/total_vendors");
+        const employeesResponse = await axios.get("http://3.109.98.188:3000/api/v1/total_employees");
+        const assetsResponse = await axios.get("http://3.109.98.188:3000/api/v1/total_assets");
+        const costAssetsResponse = await axios.get("http://3.109.98.188:3000/api/v1/totalcost_assets");
+
+        setTotalVendors(vendorsResponse.data);
+        setTotalEmployee(employeesResponse.data);
+        setTotalAsset(assetsResponse.data);
+        setTotalCostAsset(costAssetsResponse.data);
+
+        const formattedGraphData = processDataForGraph(
+          vendorsResponse.data,
+          employeesResponse.data,
+          assetsResponse.data,
+          costAssetsResponse.data
+        );
+        setGraphData(formattedGraphData);
+      } catch (error) {
+        console.error("Error fetching graph data:", error);
+      }
+    };
+
+    fetchDataForGraph();
   }, []);
+
+  const processDataForGraph = (vendors, employees, assets, costAssets) => {
+    const processedData = [
+      { x: vendors, y: employees },
+      { x: assets, y: costAssets },
+      // Add more data points as needed based on your requirements
+    ];
+
+    return processedData;
+  };
 
   return (
     <main id="main" className={`main-content ${sidebarOpen ? "shift-right" : ""}`}>
       <div className="card" id="card_main">
         <section className="section-main">
-            <div className="">
-              <div className="title">
-                <h3>
-                  <b>Dashboard</b>
-                </h3>
-              </div>
+          <div className="">
+            <div className="title">
+              <h3>
+                <b>Dashboard</b>
+              </h3>
+            </div>
           </div>
           <hr />
 
@@ -50,8 +83,7 @@ const Dashboard = ({ sidebarOpen }) => {
                     Your default Location is not updated
                     <b> <a href="/profile" id="loc1"> Click here </a> </b>
                     to choose your default Location. <br />
-                    <b>Note</b>:- You can add &amp; set default Location from
-                    Admin &gt; Locations section as well.
+                    <b>Note</b>:- You can add &amp; set default Location from Admin &gt; Locations section as well.
                   </p>
                 </center>
               </div>
@@ -107,11 +139,12 @@ const Dashboard = ({ sidebarOpen }) => {
               </div>
             </div>
 
-            <div className="second_div_graph">
-              <Graph />
-            </div>      
-            <div className="mt-5"> 
-              <DashboardTabledata/>
+            <div>
+              <Graph chartData={graphData} />
+            </div>
+
+            <div className="mt-5">
+              <DashboardTabledata />
             </div>
           </div>
         </section>
@@ -119,4 +152,5 @@ const Dashboard = ({ sidebarOpen }) => {
     </main>
   );
 };
+
 export default Dashboard;
