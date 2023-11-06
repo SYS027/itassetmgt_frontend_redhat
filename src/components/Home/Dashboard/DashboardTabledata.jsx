@@ -1,21 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LatestSubscription from "./LatestSubscription";
 
-const DashboardTabledata = () => {
+const DashboardTabledata = () => {  
   return (
     <>
       <div className="container">
-        <div className="button-asset-dashboard">
-          <button href="#" className="btn btn-primary btnn " id="assets">
+      <div className="button-asset-dashboard">
+      <Link to="/addlist" className="btn btn-primary btn" id="assets-unasign-button">
             UNASSIGN ASSETS
-          </button>
-          <button
-            href="#"
-            className="btn btn-dark btnn"
-            id="assets-asign-button"
-          >
+          </Link>
+      <Link to="/assignasset" className="btn btn-dark btn" id="assets-asign-button">
             ASSIGN ASSETS
-          </button>
+          </Link>
         </div>
       </div>
       <div className="container">
