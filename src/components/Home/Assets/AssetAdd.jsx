@@ -40,12 +40,12 @@ const AssetAdd = ({ sidebarOpen }) => {
   };
 
   useEffect(() => {
-    fetchData("http://3.109.98.188:3000/api/v1/productcategories", setProductCategories);
-    fetchData("http://3.109.98.188:3000/api/v1/products", setProducts);
-    fetchData("http://3.109.98.188:3000/api/v1/producttype", setProductTypes);
-    fetchData("http://3.109.98.188:3000/api/v1/locations", setLocations);
-    fetchData("http://3.109.98.188:3000/api/v1/purchase_types", setPurchaseTypes);
-    fetchData("http://3.109.98.188:3000/api/v1/vendors", setVendors);
+    fetchData("http://103.228.83.115:8081/api/v1/productcategories", setProductCategories);
+    fetchData("http://103.228.83.115:8081/api/v1/products", setProducts);
+    fetchData("http://103.228.83.115:8081/api/v1/producttype", setProductTypes);
+    fetchData("http://103.228.83.115:8081/api/v1/locations", setLocations);
+    fetchData("http://103.228.83.115:8081/api/v1/purchase_types", setPurchaseTypes);
+    fetchData("http://103.228.83.115:8081/api/v1/vendors", setVendors);
   }, []);
 
   const postData = async (e) => {
@@ -72,7 +72,7 @@ const AssetAdd = ({ sidebarOpen }) => {
     };
     
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/asset",  {
+      const response = await fetch("http://103.228.83.115:8081/api/v1/asset",  {
         method: "POST",
         body: JSON.stringify({ asset: formData }),
         headers: {

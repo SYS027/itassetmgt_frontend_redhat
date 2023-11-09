@@ -39,13 +39,13 @@ const [productTypes, setProductTypes] = useState([]);
   };
 
   useEffect(() => {
-    fetchData("http://3.109.98.188:3000/api/v1/productcategories", setProductCategories);
-    fetchData("http://3.109.98.188:3000/api/v1/producttype", setProductTypes);
-    fetchData("http://3.109.98.188:3000/api/v1/locations", setLocations);
-    fetchData("http://3.109.98.188:3000/api/v1/products", setProducts);
-    fetchData("http://3.109.98.188:3000/api/v1/purchase_types", setPurchaseTypes);
-    fetchData("http://3.109.98.188:3000/api/v1/vendors", setVendors);
-    fetchData(`http://3.109.98.188:3000/api/v1/asset/${params.id}`, setAssetData);
+    fetchData("http://103.228.83.115:8081/api/v1/productcategories", setProductCategories);
+    fetchData("http://103.228.83.115:8081/api/v1/producttype", setProductTypes);
+    fetchData("http://103.228.83.115:8081/api/v1/locations", setLocations);
+    fetchData("http://103.228.83.115:8081/api/v1/products", setProducts);
+    fetchData("http://103.228.83.115:8081/api/v1/purchase_types", setPurchaseTypes);
+    fetchData("http://103.228.83.115:8081/api/v1/vendors", setVendors);
+    fetchData(`http://103.228.83.115:8081/api/v1/asset/${params.id}`, setAssetData);
   }, [params.id]);
 
   const setAssetData = (assetData) => {
@@ -66,7 +66,7 @@ const [productTypes, setProductTypes] = useState([]);
 
   const updateData = async (e) => {
     e.preventDefault();
-    const url = `http://3.109.98.188:3000/api/v1/asset/${id}`;
+    const url = `http://103.228.83.115:8081/api/v1/asset/${id}`;
     const data = {
       product_category_id: selectedProductCategory,
       product_type_id: selectedProductType,

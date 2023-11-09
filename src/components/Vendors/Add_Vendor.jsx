@@ -32,9 +32,9 @@ const Add_Vendor = () => {
   };
   
   useEffect(() => {
-    fetchData("http://3.109.98.188:3000/api/v1/countries", setCountries);
-    fetchData("http://3.109.98.188:3000/api/v1/states", setStates);
-    fetchData("http://3.109.98.188:3000/api/v1/cities", setCities);
+    fetchData("http://103.228.83.115:8081/api/v1/countries", setCountries);
+    fetchData("http://103.228.83.115:8081/api/v1/states", setStates);
+    fetchData("http://103.228.83.115:8081/api/v1/cities", setCities);
   }, []);
 
   const handleSubmit = () => {
@@ -67,7 +67,7 @@ Swal.fire({
       description: description,
     };
 
-    fetch("http://3.109.98.188:3000/api/v1/vendors", {
+    fetch("http://103.228.83.115:8081/api/v1/vendors", {
       method: "POST",
       body: JSON.stringify({ vendor: formData }),
       headers: {

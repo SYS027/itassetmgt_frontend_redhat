@@ -16,7 +16,7 @@ const Add_Product = ({ sidebarOpen }) => {
     const fetchProductTypes = async () => {
       try {
         const response = await fetch(
-          "http://3.109.98.188:3000/api/v1/producttype"
+          "http://103.228.83.115:8081/api/v1/producttype"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -34,7 +34,7 @@ const Add_Product = ({ sidebarOpen }) => {
     const fetchProductCategories = async () => {
       try {
         const response = await fetch(
-          "http://3.109.98.188:3000/api/v1/productcategories"
+          "http://103.228.83.115:8081/api/v1/productcategories"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -64,7 +64,7 @@ const Add_Product = ({ sidebarOpen }) => {
   const postData = async () => {
     try {
       const response = await fetch(
-        "http://3.109.98.188:3000/api/v1/product/create",
+        "http://103.228.83.115:8081/api/v1/product/create",
         {
           method: "POST",
           headers: {

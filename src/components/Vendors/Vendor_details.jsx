@@ -11,7 +11,7 @@ const Vendor_details = ({ sidebarOpen, match }) => {
   const [cityName, setCityName] = useState("");
 
   useEffect(() => {
-    const url = `http://3.109.98.188:3000/api/v1/vendors/${params.id}`;
+    const url = `http://103.228.83.115:8081/api/v1/vendors/${params.id}`;
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -25,7 +25,7 @@ const Vendor_details = ({ sidebarOpen, match }) => {
 
   useEffect(() => {
     if (vendor.country_id) {
-      const countryUrl = `http://3.109.98.188:3000/api/v1/countries/${vendor.country_id}`;
+      const countryUrl = `http://103.228.83.115:8081/api/v1/countries/${vendor.country_id}`;
       fetch(countryUrl)
         .then((response) => {
           if (response.ok) {
@@ -40,7 +40,7 @@ const Vendor_details = ({ sidebarOpen, match }) => {
 
   useEffect(() => {
     if (vendor.state_id) {
-      const stateUrl = `http://3.109.98.188:3000/api/v1/states/${vendor.state_id}`;
+      const stateUrl = `http://103.228.83.115:8081/api/v1/states/${vendor.state_id}`;
       fetch(stateUrl)
         .then((response) => {
           if (response.ok) {
@@ -55,7 +55,7 @@ const Vendor_details = ({ sidebarOpen, match }) => {
 
   useEffect(() => {
     if (vendor.city_id) {
-      const cityUrl = `http://3.109.98.188:3000/api/v1/cities/${vendor.city_id}`;
+      const cityUrl = `http://103.228.83.115:8081/api/v1/cities/${vendor.city_id}`;
       fetch(cityUrl)
         .then((response) => {
           if (response.ok) {

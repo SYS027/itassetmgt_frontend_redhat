@@ -39,7 +39,7 @@ const AddList = ({ sidebarOpen }) => {
     try {
       await Promise.all(
         selectedAssets.map((id) =>
-          fetch(`http://3.109.98.188:3000/api/v1/asset/${id}`, { method: "DELETE" })
+          fetch(`http://103.228.83.115:8081/api/v1/asset/${id}`, { method: "DELETE" })
         )
       );
       setAssets(assets.filter((asset) => !selectedAssets.includes(asset.id)));
@@ -51,7 +51,7 @@ const AddList = ({ sidebarOpen }) => {
 
   const handleToggle = async (id, newStatus) => {
     try {
-      await fetch(`http://3.109.98.188:3000/api/v1/asset/${id}`, {
+      await fetch(`http://103.228.83.115:8081/api/v1/asset/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const AddList = ({ sidebarOpen }) => {
 
   const assetData = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/asset");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/asset");
       const data = await response.json();
       setAssets(data);
     } catch (error) {
@@ -107,7 +107,7 @@ const AddList = ({ sidebarOpen }) => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://3.109.98.188:3000/api/v1/asset/${id}`, { method: 'DELETE' });
+      await fetch(`http://103.228.83.115:8081/api/v1/asset/${id}`, { method: 'DELETE' });
       setAssets(assets.filter(asset => asset.id !== id));
     }
     catch (error) {

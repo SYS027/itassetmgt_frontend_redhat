@@ -35,7 +35,7 @@ function AssignAssetEdit() {
   const params = useParams();
   const vendordata = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/vendors");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/vendors");
       const data = await response.json();
       setVendor(data);
     } catch (error) {
@@ -46,7 +46,7 @@ function AssignAssetEdit() {
   const fetchAssignAssetData = async () => {
     try {
       const response = await fetch(
-        `hhttp://3.109.98.188:3000/api/v1/assign_assets/${params.id}`
+        `hhttp://103.228.83.115:8081/api/v1/assign_assets/${params.id}`
       );
       const data = await response.json();
       setId(data.id);
@@ -88,7 +88,7 @@ function AssignAssetEdit() {
       Assign_Component: assigncomponent,
     };
 
-    fetch(`http://3.109.98.188:3000/api/v1/assign_assets/${id}`, {
+    fetch(`http://103.228.83.115:8081/api/v1/assign_assets/${id}`, {
       method: "PUT",
       body: JSON.stringify({ assign_asset: formData }),
       headers: {
@@ -113,7 +113,7 @@ function AssignAssetEdit() {
   const procuctcatogrydata = async () => {
     try {
       const response = await fetch(
-        "http://3.109.98.188:3000/api/v1/productcategories"
+        "http://103.228.83.115:8081/api/v1/productcategories"
       );
       const data = await response.json();
       setProdCategory(data);
@@ -124,7 +124,7 @@ function AssignAssetEdit() {
 
   const producttypedata = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/producttype");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/producttype");
       const data = await response.json();
       setProductType(data);
     } catch (error) {
@@ -134,7 +134,7 @@ function AssignAssetEdit() {
 
   const Assetdata = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/asset");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/asset");
       const data = await response.json();
       setAssetName(data);
     } catch (error) {
@@ -144,7 +144,7 @@ function AssignAssetEdit() {
 
   const employedata = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/employee");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/employee");
       const data = await response.json();
       setEmp(data);
     } catch (error) {
@@ -154,7 +154,7 @@ function AssignAssetEdit() {
 
   const departmentdata = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/departments");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/departments");
       const data = await response.json();
       setDepartment(data);
     } catch (error) {
@@ -165,7 +165,7 @@ function AssignAssetEdit() {
   const productdata = async () => {
     try {
       const response = await fetch(
-        "http://3.109.98.188:3000/api/v1/products"
+        "http://103.228.83.115:8081/api/v1/products"
       );
       const data = await response.json();
       setProduct(data);

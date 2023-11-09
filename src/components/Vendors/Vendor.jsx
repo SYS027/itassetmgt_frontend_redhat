@@ -17,7 +17,7 @@ const Vendor = ({ sidebarOpen }) => {
 
   const fetchVendorData = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/vendors");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/vendors");
       const data = await response.json();
       setVendors(data);
     } catch (error) {
@@ -51,7 +51,7 @@ const Vendor = ({ sidebarOpen }) => {
     try {
       await Promise.all(
         selectedVendors.map((id) =>
-          fetch(`http://3.109.98.188:3000/api/v1/vendors/${id}`, {
+          fetch(`http://103.228.83.115:8081/api/v1/vendors/${id}`, {
             method: "DELETE",
           })
         )
@@ -81,7 +81,7 @@ const Vendor = ({ sidebarOpen }) => {
   }
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://3.109.98.188:3000/api/v1/vendors/${id}`, {
+      await fetch(`http://103.228.83.115:8081/api/v1/vendors/${id}`, {
         method: "DELETE",
       });
       setVendors((prevVendors) =>
@@ -94,7 +94,7 @@ const Vendor = ({ sidebarOpen }) => {
 
   const handleToggle = async (id, newStatus) => {
     try {
-      await fetch(`http://3.109.98.188:3000/api/v1/vendors/${id}`, {
+      await fetch(`http://103.228.83.115:8081/api/v1/vendors/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

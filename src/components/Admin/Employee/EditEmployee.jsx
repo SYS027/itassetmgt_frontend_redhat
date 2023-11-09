@@ -20,7 +20,7 @@ const EditEmployee = ({ sidebarOpen }) => {
 
     const fetchLocation = async () => {
         try {
-            const response = await fetch("http://3.109.98.188:3000/api/v1/locations");
+            const response = await fetch("http://103.228.83.115:8081/api/v1/locations");
             const data = await response.json();
             setLocations(data);
             console.log(data, "locations");
@@ -31,7 +31,7 @@ const EditEmployee = ({ sidebarOpen }) => {
 
     const fetchDeparment = async () => {
         try {
-            const response = await fetch("http://3.109.98.188:3000/api/v1/departments");
+            const response = await fetch("http://103.228.83.115:8081/api/v1/departments");
             if (!response.ok) {
                 throw new Error("Network response was not ok.");
             }
@@ -44,7 +44,7 @@ const EditEmployee = ({ sidebarOpen }) => {
 
     const fetchEmployee = async () => {
         try {
-            const response = await fetch("http://3.109.98.188:3000/api/v1/employee");
+            const response = await fetch("http://103.228.83.115:8081/api/v1/employee");
             if (!response.ok) {
                 throw new Error("Network response was not ok.");
             }
@@ -57,7 +57,7 @@ const EditEmployee = ({ sidebarOpen }) => {
 
     const fetchEmployeeData2 = async () => {
         try {
-            const response = await fetch(`http://3.109.98.188:3000/api/v1/employee/${params.id}`);
+            const response = await fetch(`http://103.228.83.115:8081/api/v1/employee/${params.id}`);
             if (!response.ok) {
                 throw new Error("Network response was not ok.");
             }
@@ -85,7 +85,7 @@ const EditEmployee = ({ sidebarOpen }) => {
     const updateEmployee = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://3.109.98.188:3000/api/v1/employee/${params.id}`, {
+            const response = await fetch(`http://103.228.83.115:8081/api/v1/employee/${params.id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

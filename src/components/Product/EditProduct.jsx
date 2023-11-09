@@ -16,7 +16,7 @@ const EditProduct = ({ sidebarOpen }) => {
   useEffect(() => {
     const fetchProductTypes = async () => {
       try {
-        const response = await fetch('http://3.109.98.188:3000/api/v1/producttype');
+        const response = await fetch('http://103.228.83.115:8081/api/v1/producttype');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -32,7 +32,7 @@ const EditProduct = ({ sidebarOpen }) => {
   useEffect(() => {
     const fetchProductCategories = async () => {
       try {
-        const response = await fetch('http://3.109.98.188:3000/api/v1/productcategories');
+        const response = await fetch('http://103.228.83.115:8081/api/v1/productcategories');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -47,7 +47,7 @@ const EditProduct = ({ sidebarOpen }) => {
 
   const fetchProductsbyid = async () => {
     try {
-      const response = await fetch(`http://3.109.98.188:3000/api/v1/products/${params.id}`);
+      const response = await fetch(`http://103.228.83.115:8081/api/v1/products/${params.id}`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -68,7 +68,7 @@ const EditProduct = ({ sidebarOpen }) => {
  const updateProduct = async (e) => {
   e.preventDefault();
   try {
-    const response = await fetch(`http://3.109.98.188:3000/api/v1/product/${params.id}`, {
+    const response = await fetch(`http://103.228.83.115:8081/api/v1/product/${params.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

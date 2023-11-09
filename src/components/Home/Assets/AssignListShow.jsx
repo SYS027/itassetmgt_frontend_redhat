@@ -19,7 +19,7 @@ const AssignListShow = ({ sidebarOpen, match }) => {
   
 
   useEffect(() => {
-    const url = `hhttp://3.109.98.188:3000/api/v1/assign_assets/${params.id}`;
+    const url = `hhttp://103.228.83.115:8081/api/v1/assign_assets/${params.id}`;
     fetch(url)
       .then((response) => {
         if (response.ok) {

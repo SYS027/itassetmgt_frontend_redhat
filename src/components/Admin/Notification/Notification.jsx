@@ -6,7 +6,7 @@ const[notifications, setNotifications]= useState([]);
 
 const notificationData = async()=>{
     try{
-        const response = await fetch("http://3.109.98.188:3000/api/v1/notifications");
+        const response = await fetch("http://103.228.83.115:8081/api/v1/notifications");
         const data = await response.json();
         setNotifications(data);
     } catch(error){console.error("error fetching notifications", error)};

@@ -13,7 +13,7 @@ const EditDepartment = ({ sidebarOpen }) => {
   const fetchDepartmentData = async () => {
     try {
       const response = await fetch(
-        `http://3.109.98.188:3000/api/v1/departments/${departmentId}`
+        `http://103.228.83.115:8081/api/v1/departments/${departmentId}`
       );
       const data = await response.json();
       setFormData(data);
@@ -32,7 +32,7 @@ const EditDepartment = ({ sidebarOpen }) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://3.109.98.188:3000/api/v1/departments/${departmentId}`,
+        `http://103.228.83.115:8081/api/v1/departments/${departmentId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

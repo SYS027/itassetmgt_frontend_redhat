@@ -10,7 +10,7 @@ const Department = ({ sidebarOpen }) => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://3.109.98.188:3000/api/v1/departments");
+      const response = await fetch("http://103.228.83.115:8081/api/v1/departments");
       const data = await response.json();
       setData(data);
     } catch (error) {
@@ -40,7 +40,7 @@ const Department = ({ sidebarOpen }) => {
   const handleDelete = async (itemId) => {
     try {
       const response = await fetch(
-        `http://3.109.98.188:3000/api/v1/departments/${itemId}`,
+        `http://103.228.83.115:8081/api/v1/departments/${itemId}`,
         { method: "DELETE" }
       );
       if (response.ok) {
@@ -54,7 +54,7 @@ const Department = ({ sidebarOpen }) => {
   const handleStatusToggle = async (itemId, newStatus) => {
     try {
       const response = await fetch(
-        `http://3.109.98.188:3000/api/v1/departments/${itemId}`,
+        `http://103.228.83.115:8081/api/v1/departments/${itemId}`,
         {
           method: "PATCH",
           headers: {

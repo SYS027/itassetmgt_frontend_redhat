@@ -11,7 +11,7 @@ const AssignAssetList = ({ sidebarOpen }) => {
   const assignData = async () => {
     try {
       const response = await fetch(
-        "http://3.109.98.188:3000/api/v1/assign_assets"
+        "http://103.228.83.115:8081/api/v1/assign_assets"
       );
       const data = await response.json();
       console.log("Data from API:", data);
@@ -27,7 +27,7 @@ const AssignAssetList = ({ sidebarOpen }) => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://3.109.98.188:3000/api/v1/assign_assets/${id}`, {
+      await fetch(`http://103.228.83.115:8081/api/v1/assign_assets/${id}`, {
         method: "DELETE",
       });
 
@@ -49,7 +49,7 @@ const AssignAssetList = ({ sidebarOpen }) => {
     try {
       await Promise.all(
         selectedItems.map((id) =>
-          fetch(`http://3.109.98.188:3000/api/v1/assign_assets/${id}`, {
+          fetch(`http://103.228.83.115:8081/api/v1/assign_assets/${id}`, {
             method: "DELETE",
           })
         )
@@ -74,7 +74,7 @@ const AssignAssetList = ({ sidebarOpen }) => {
 
   const handleToggle = async (id, newStatus) => {
     try {
-      await fetch(`http://3.109.98.188:3000/api/v1/assign_assets/${id}`, {
+      await fetch(`http://103.228.83.115:8081/api/v1/assign_assets/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

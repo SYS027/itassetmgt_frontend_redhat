@@ -62,7 +62,7 @@ const ForgetPassword = () => {
     };
 
     axios
-      .post("http://3.109.98.188:3000/api/v1/password_resets", data)
+      .post("http://103.228.83.115:8081/api/v1/password_resets", data)
       .then((response) => {
         setResetMessage("Password reset successful!");
         navigate("/login");

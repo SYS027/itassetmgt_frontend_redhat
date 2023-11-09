@@ -27,10 +27,10 @@ const Dashboard = ({ sidebarOpen }) => {
   useEffect(() => {
     const fetchDataForGraph = async () => {
       try {
-        const vendorsResponse = await axios.get("http://3.109.98.188:3000/api/v1/total_vendors");
-        const employeesResponse = await axios.get("http://3.109.98.188:3000/api/v1/total_employees");
-        const assetsResponse = await axios.get("http://3.109.98.188:3000/api/v1/total_assets");
-        const costAssetsResponse = await axios.get("http://3.109.98.188:3000/api/v1/totalcost_assets");
+        const vendorsResponse = await axios.get("http://103.228.83.115:8081/api/v1/total_vendors");
+        const employeesResponse = await axios.get("http://103.228.83.115:8081/api/v1/total_employees");
+        const assetsResponse = await axios.get("http://103.228.83.115:8081/api/v1/total_assets");
+        const costAssetsResponse = await axios.get("http://103.228.83.115:8081/api/v1/totalcost_assets");
 
         setTotalVendors(vendorsResponse.data);
         setTotalEmployee(employeesResponse.data);
