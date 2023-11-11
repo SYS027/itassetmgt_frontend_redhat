@@ -20,12 +20,11 @@
   bottom: 0;
 }
 .div3imgdashboard {
-  width: 45px;
+   width: 45px;
+  top: 110.5px;
   position: absolute;
   right: 0;
   bottom: 0;
-  top: 110.5px;
-  left: 222px;
 }
 #card_main {
   margin: 5px 5px 0px 5px;

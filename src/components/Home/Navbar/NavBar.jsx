@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
   try {
-    const response = await fetch("http://103.228.83.115:8081/api/v1/logout/", {
+    const response = await fetch("http://103.228.83.115:8081/api/v1/logout", {
       method: "DELETE",
       credentials: "include",
       mode: "cors", // Add this line to explicitly specify CORS mode
